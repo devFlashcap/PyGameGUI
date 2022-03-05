@@ -1,5 +1,6 @@
 import pygame
 from button import Button
+from textalign import TextAlign
 from verticallayout import VerticalLayout
 
 pygame.init()
@@ -26,12 +27,12 @@ def main():
 
 def draw(window):
     window.fill((255,255,255))
-    button = Button(pygame.Rect(0,0,200,40), (0,0,0), (255,255,255), 20)
-    button2 = Button(pygame.Rect(0,0,200,60), (255,0,0), (255,255,255), 20)
-    button3 = Button(pygame.Rect(0,0,200,40), (0,255,0), (255,255,255), 20)
-    button4 = Button(pygame.Rect(0,0,200,80), (255,255,0), (255,255,255), 20)
-    button5 = Button(pygame.Rect(0,0,200,60), (255,0,0), (255,255,255), 20)
-    button6 = Button(pygame.Rect(0,0,200,100), (0,255,255), (255,255,255), 20)
+    button = Button("asd", pygame.Rect(0,0,200,40), (0,0,0), (255,255,255), 20, TextAlign.Right)
+    button2 = Button("fgh", pygame.Rect(0,0,200,60), (255,0,0), (255,255,255), 20, TextAlign.Center)
+    button3 = Button("ijk", pygame.Rect(0,0,200,40), (0,255,0), (255,255,255), 20)
+    button4 = Button("sdfgdsfg", pygame.Rect(0,0,200,80), (255,255,0), (255,255,255), 20, TextAlign.Right)
+    button5 = Button("fasz", pygame.Rect(0,0,200,60), (255,0,0), (255,255,255), 20)
+    button6 = Button("lofasz", pygame.Rect(0,0,200,100), (0,255,255), (255,255,255), 20)
 
     verticalLayout = VerticalLayout(pygame.Rect(0,0,800,800))
     verticalLayout.addControl(button)
