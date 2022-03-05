@@ -1,5 +1,6 @@
 import pygame
 from button import Button
+from verticallayout import VerticalLayout
 
 pygame.init()
 
@@ -25,7 +26,21 @@ def main():
 
 def draw(window):
     window.fill((255,255,255))
-    button = Button((0,0,200,40), (0,0,0), (255,255,255), 20)
-    button.draw(window)
+    button = Button(pygame.Rect(0,0,200,40), (0,0,0), (255,255,255), 20)
+    button2 = Button(pygame.Rect(0,0,200,60), (255,0,0), (255,255,255), 20)
+    button3 = Button(pygame.Rect(0,0,200,40), (0,255,0), (255,255,255), 20)
+    button4 = Button(pygame.Rect(0,0,200,80), (255,255,0), (255,255,255), 20)
+    button5 = Button(pygame.Rect(0,0,200,60), (255,0,0), (255,255,255), 20)
+    button6 = Button(pygame.Rect(0,0,200,100), (0,255,255), (255,255,255), 20)
+
+    verticalLayout = VerticalLayout(pygame.Rect(0,0,800,800))
+    verticalLayout.addControl(button)
+    verticalLayout.addControl(button2)
+    verticalLayout.addControl(button3)
+    verticalLayout.addControl(button4)
+    verticalLayout.addControl(button5)
+    verticalLayout.addControl(button6)
+
+    verticalLayout.draw(window)
 
 main()
