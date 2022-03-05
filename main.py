@@ -27,20 +27,14 @@ def main():
 
 def draw(window):
     window.fill((255,255,255))
-    button = Button("asd", pygame.Rect(0,0,200,40), (0,0,0), (255,255,255), 20, TextAlign.Right)
-    button2 = Button("fgh", pygame.Rect(0,0,200,60), (255,0,0), (255,255,255), 20, TextAlign.Center)
+    button = Button("asd", pygame.Rect(0,0,200,40), (0,0,0), (255,255,255), 20, TextAlign.Right, padding=(20, 20, 20, 40))
+    button2 = Button("fgh", pygame.Rect(0,0,200,60), (255,0,0), (255,255,255), 20, TextAlign.Center, padding=(20, 20, 20, 40))
     button3 = Button("ijk", pygame.Rect(0,0,200,40), (0,255,0), (255,255,255), 20)
-    button4 = Button("sdfgdsfg", pygame.Rect(0,0,200,80), (255,255,0), (255,255,255), 20, TextAlign.Right)
-    button5 = Button("fasz", pygame.Rect(0,0,200,60), (255,0,0), (255,255,255), 20)
-    button6 = Button("lofasz", pygame.Rect(0,0,200,100), (0,255,255), (255,255,255), 20)
 
-    verticalLayout = VerticalLayout(pygame.Rect(0,0,800,800))
+    verticalLayout = VerticalLayout(pygame.Rect(0,0,600,600))
     verticalLayout.addControl(button)
     verticalLayout.addControl(button2)
     verticalLayout.addControl(button3)
-    verticalLayout.addControl(button4)
-    verticalLayout.addControl(button5)
-    verticalLayout.addControl(button6)
 
     verticalLayout.draw(window)
 

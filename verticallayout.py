@@ -1,6 +1,5 @@
 import pygame
 from control import Control
-from sizeunits import SizeUnits
 
 class VerticalLayout(Control):
     def __init__(self, rect):
