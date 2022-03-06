@@ -7,6 +7,7 @@ class Control:
         self.margin = (0,0,0,0)
         self.padding = (0,0,0,0)
         self.rect = None
+        self.hovered = False
     
     def setRect(self, rect):
         self.rect = rect

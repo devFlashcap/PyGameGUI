@@ -3,7 +3,7 @@ from control import Control
 from textalign import TextAlign
 
 class Button(Control):
-    def __init__(self, text, rect, backgroundColor, fontColor, fontSize, textAlign = TextAlign.Left, hoverBackgroundColor = (0, 0, 0), hoverFontColor = (255, 255, 255), padding = (0,0,0,0)):
+    def __init__(self, text, rect, backgroundColor, fontColor, fontSize, textAlign = TextAlign.Left, hoverBackgroundColor = (255, 255, 255), hoverFontColor = (0, 0, 0), padding = (0,0,0,0), onClick = None):
         self.rect = rect
         self.backgroundColor = backgroundColor
         self.fontColor = fontColor
@@ -17,10 +17,13 @@ class Button(Control):
         self.labelPosition = None
         self.padding = padding
         self.calculatePaddings()
-        self.calculateTextPosition()
+        self.onClick = onClick
     
     def calculateTextPosition(self):
-        self.label = self.font.render(self.text, True, self.fontColor)
+        if self.hovered:
+            self.label = self.font.render(self.text, True, self.hoverFontColor)
+        else:
+            self.label = self.font.render(self.text, True, self.fontColor)
         labelRect = self.label.get_rect()
 
         paddingTop, paddingBottom, paddingLeft, paddingRight = self.padding
@@ -57,8 +60,15 @@ class Button(Control):
 
 
     def draw(self, window):
-        pygame.draw.rect(window, self.backgroundColor, self.rect)
-        textPosition = self.calculateTextPosition()
+        self.calculateTextPosition()
+        if self.hovered:
+            backgroundColor = self.hoverBackgroundColor
+            self.label = self.font.render(self.text, True, self.hoverFontColor)
+        else:
+            backgroundColor = self.backgroundColor
+            self.label = self.font.render(self.text, True, self.fontColor)
+
+        pygame.draw.rect(window, backgroundColor, self.rect)
         window.blit(self.label, self.labelPosition)
 
 
