@@ -1,5 +1,6 @@
 import pygame
 from button import Button
+from gridlayout import GridLayout
 from horizontallayout import HorizontalLayout
 from textalign import TextAlign
 from verticallayout import VerticalLayout
@@ -28,21 +29,23 @@ def main():
 
 def draw(window):
     window.fill((255,255,255))
-    button = Button("asd", pygame.Rect(0,0,40,40), (0,0,0), (255,255,255), 20, TextAlign.Right)
-    button2 = Button("fgh", pygame.Rect(0,0,40,40), (255,0,0), (255,255,255), 20, TextAlign.Center)
-    button3 = Button("ijk", pygame.Rect(0,0,40,40), (0,255,0), (255,255,255), 20)
+    button = Button("asd", pygame.Rect(0,0,80,80), (0,0,0), (255,255,255), 20, TextAlign.Right)
+    button2 = Button("fgh", pygame.Rect(0,0,80,80), (255,0,0), (255,255,255), 20, TextAlign.Center)
+    button3 = Button("ijk", pygame.Rect(0,0,80,80), (0,255,0), (255,255,255), 20)
+    button4 = Button("asd", pygame.Rect(0,0,80,80), (0,0,0), (255,255,255), 20, TextAlign.Right)
+    button5 = Button("fgh", pygame.Rect(0,0,80,80), (255,0,0), (255,255,255), 20, TextAlign.Center)
+    button6 = Button("ijk", pygame.Rect(0,0,80,80), (0,255,0), (255,255,255), 20)
 
-    """
-    verticalLayout = VerticalLayout(pygame.Rect(0,0,600,600))
-    verticalLayout.addControl(button)
-    verticalLayout.addControl(button2)
-    verticalLayout.addControl(button3)
-    """
-    horizontalLayout = HorizontalLayout(pygame.Rect(0,0,200,40))
-    horizontalLayout.addControl(button)
-    horizontalLayout.addControl(button2)
-    horizontalLayout.addControl(button3)
+    gridLayout = GridLayout(pygame.Rect(50,50,400,600), padding=(20, 20, 20, 20))
 
-    horizontalLayout.draw(window)
+    gridLayout.addControl(button)
+    gridLayout.addControl(button2)
+    gridLayout.addControl(button3)
+
+    gridLayout.addControl(button4)
+    gridLayout.addControl(button5)
+    gridLayout.addControl(button6)
+
+    gridLayout.draw(window)
 
 main()

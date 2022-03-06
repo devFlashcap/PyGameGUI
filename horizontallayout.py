@@ -23,7 +23,7 @@ class HorizontalLayout(Control):
         for idx in range(0, len(self.controls)):
             xPos = slotWidth * idx + (slotWidth / 2 - self.controls[idx].rect.width / 2)
             self.controls[idx].setRect(pygame.Rect(xPos, self.rect.y, self.controls[idx].rect.width, self.rect.height))
-            pygame.draw.line(window, (0,0,0), (slotWidth * idx, 0), (slotWidth*idx, self.rect.height), 4)
+            #pygame.draw.line(window, (0,0,0), (slotWidth * idx, 0), (slotWidth*idx, self.rect.height), 4)
 
     
     def draw(self, window):
